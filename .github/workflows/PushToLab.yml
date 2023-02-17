@@ -17,7 +17,6 @@ jobs:
         id: deploy_artifact_step
         with:
           api-key: ${{ secrets.PCK_LAB }}
-          solution-path: './Example/Script.sln'
+          solution-path: './NBCS-AS-CreatePaActivity/AutomationScript.sln'
           artifact-name: 'MyArtifactName'
-          version: '1.0.1'
-          timeout: '300'
+          timeout: '100'

@@ -1,0 +1,21 @@
+- name: Skyline DataMiner Deploy Action
+  # You may pin to the exact commit or the version.
+  # uses: SkylineCommunications/Skyline-DataMiner-Deploy-Action@9d9e8d534334b02d2e4a20a4deb0534e9456fae3
+  uses: SkylineCommunications/Skyline-DataMiner-Deploy-Action@v1.0.11
+  with:
+    # The API-key generated in the DCP Admin app as authentication for a certain DataMiner System, saved in a GitHub secret
+    api-key: ${{ secrets.PCK_LAB }}
+    # The path to the .sln file of the solution. Atm only DataMiner Automation Script solutions are supported. E.g ./Example/Script.sln. Required for stages: All and Upload.
+    solution-path: # optional
+    # The chosen name of the artifact. E.g. MyPackageName.  Required for stages: All, Upload and Deploy.
+    artifact-name: # optional
+    # The version number for the artifact. Only required for a release run. (format A.B.C). E.g. 1.0.1. Required for stages Upload and All if no build number was provided instead.
+    version: # optional
+    # The maximum time spent on waiting for the deployment to finish in seconds. E.g. 900.
+    timeout: # optional, default is 900
+    # The specific stage to run in this action. Possible values are: All, Upload, and Deploy. All will run all 3 stages consecutively.
+    stage: # optional, default is All
+    # The artifact Id of the artifact that you would like to deploy
+    artifact-id: # optional
+    # The build number of a workflow run. Only required for a development run. Required for stages Upload and All if no version was provided instead.
+    build-number: # optional
